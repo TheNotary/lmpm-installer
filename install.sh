@@ -23,8 +23,9 @@ echo "Beginning binary installations"
 echo CONFIGURE TERMINAL TO USE RVM PROPERLY!
 
 echo "use 1.9.3" > ~/.rvmrc
-export PATH=$PATH:`echo ~/.rvm/rubies/ruby-1.9.3-*/bin`
+export PATH=$PATH:`echo ~/.rvm/rubies/ruby-1.9.3-*/bin`:`echo ~/.rvm/gems/ruby-1.9.3-p*/bin | awk '{print $1;}'`
 
+set gem_path = `echo ~/.rvm/gems/ruby-1.9.3-p*/bin | awk '{print $1;}'`
 
 echo "Complete"
 
@@ -32,8 +33,10 @@ echo "Complete"
 echo "Beginning Ruby Gem Part"
 
 ~/.rvm/rubies/ruby-1.9.3-*/bin/gem install gas2
-~/.rvm/rubies/ruby-1.9.3-*/bin/gem install lmpm
-~/.rvm/gems/ruby-1.9.3-p392/bin/lmpm implement  https://www.github.com/TheNotary/my_linux_mint_postinstall_configuration
+#~/.rvm/rubies/ruby-1.9.3-*/bin/gem install lmpm
+#~/.rvm/rubies/ruby-1.9.3-*/bin/gem install hub
+#~/.rvm/gems/ruby-1.9.3-p392/bin/lmpm implement  https://www.github.com/TheNotary/my_linux_mint_postinstall_configuration
+
 
 echo "Complete"
 echo ""
